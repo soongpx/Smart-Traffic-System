@@ -40,7 +40,7 @@ Instead of using LEDs, 2 shift registers are used to control the LEDs. First shi
  ![Schematic_Traffic Light Control_2023-01-03](https://user-images.githubusercontent.com/100681513/210335285-91355814-bb9b-4835-92c2-c32fab0dbe39.png)
 
 #### Tinkercad Drawing
-![Spectacular Rottis-Curcan](https://user-images.githubusercontent.com/100681513/210335311-99c71f07-1612-4300-9bec-37937df4f4b8.png)
+![Tinkercad Schematic](https://user-images.githubusercontent.com/100681513/210396813-df6f9806-3a72-4432-8f58-e0569f5388f2.png)
 
  
 ## Coding
