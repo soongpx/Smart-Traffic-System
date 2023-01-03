@@ -1,7 +1,7 @@
 #include "Infrared.h"
 #include <Arduino.h>
 
-Infrared::Infrared(int a):pin(a){counter = 0;}
+Infrared::Infrared(int Pin):pin(Pin){counter = 0;}
 
 void Infrared::setup(){
     Serial.begin(9600);

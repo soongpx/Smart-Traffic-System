@@ -3,15 +3,15 @@
 
       
 
-TrafficLight::TrafficLight(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k)
+TrafficLight::TrafficLight(int Latch1, int Data1, int Clock1, int Latch2, int Data2, int Clock2, int IR1, int IR2, int IR3, int IR4, int TimeBlock)
 {
-    r1.set(a, b, c);
-    g1.set(d, e, f);
-  jun[0].setPin(g);
-  jun[1].setPin(h);
-  jun[2].setPin(i);
-  jun[3].setPin(j);
-  timeBlock = k;
+  r1.set(Latch1, Data1, Clock1);
+  g1.set(Latch2, Data2, Clock2);
+  jun[0].setPin(IR1);
+  jun[1].setPin(IR2);
+  jun[2].setPin(IR3);
+  jun[3].setPin(IR4);
+  timeBlock = TimeBlock;
 }
 
 void TrafficLight::setup(){
@@ -42,7 +42,7 @@ void TrafficLight::run(){
   if(TimeElapsed>=timeBlock-3000){
     // yellow_todo(junction_move);
     for(int i=0; i<4; i++){
-     Serial.println(jun[i].get_carNum());
+      Serial.println(jun[i].get_carNum());
         density[i] = (jun[i].get_carNum())*(jun[i].get_waitingCounter()); //get density from each junction
         current = density[i]; // find largest junction with largest density
         if(current>previous){

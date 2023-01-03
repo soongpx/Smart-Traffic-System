@@ -1,7 +1,7 @@
 #include "Junction.h"
 #include"Infrared.h"
 
-Junction::Junction(int a):Infrared(a)
+Junction::Junction(int IR_Pin):Infrared(IR_Pin)
 {
   car_counter = 0;
 }

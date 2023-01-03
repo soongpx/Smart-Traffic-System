@@ -1,7 +1,7 @@
 #include "Register.h"
 #include <Arduino.h>
 
-Register::Register(int a, int b, int c):latchPin(a), dataPin(b),clockPin(c)
+Register::Register(int Latch, int Data, int Clock):latchPin(Latch), dataPin(Data),clockPin(Clock)
 {
     leds = 0;
 }

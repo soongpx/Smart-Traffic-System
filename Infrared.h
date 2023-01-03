@@ -10,11 +10,11 @@ class Infrared
         void setup();
         bool get();
         void setPin(int);
+      int pin;
 
     protected:
     private:
       int counter = 0;
-      int pin;
 };
 
 #endif // INFRARED_H
