@@ -1,8 +1,6 @@
 #include "TrafficLight.h"
 #include <Arduino.h>
 
-      
-
 TrafficLight::TrafficLight(int Latch1, int Data1, int Clock1, int Latch2, int Data2, int Clock2, int IR1, int IR2, int IR3, int IR4, int TimeBlock)
 {
   r1.set(Latch1, Data1, Clock1);
@@ -69,9 +67,9 @@ void TrafficLight::startTimer(){
 }
 
 unsigned long TrafficLight::findTimeElapsed(){
-    endTime = millis();
-    TimeElapsed = endTime - startTime;
-    return TimeElapsed; 
+  endTime = millis();
+  TimeElapsed = endTime - startTime;
+  return TimeElapsed; 
 }
 
 void TrafficLight::green_todo(int junction_move){

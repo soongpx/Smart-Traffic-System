@@ -4,8 +4,6 @@
 #include "Register.h"
 #include"Junction.h"
 
-
-
 class TrafficLight
 {
     public:
@@ -23,9 +21,9 @@ class TrafficLight
       unsigned long TimeElapsed; 
       int car_counter; 
 
-    Register r1;
-    Register g1;
-    Junction jun[4];
+      Register r1;
+      Register g1;
+      Junction jun[4];
 
       int current, previous, junction_move, prev_junc;  
 
@@ -34,7 +32,6 @@ class TrafficLight
       int green[4] = {0,0,0,0};
       
       bool has_run;
-      
 };
 
 #endif // TRAFFICLIGHT_H

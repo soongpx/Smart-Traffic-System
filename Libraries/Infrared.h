@@ -6,14 +6,13 @@
 class Infrared
 {
     public:
-        Infrared(int=2);
-        void setup();
-        bool get();
-        void setPin(int);
-      int pin;
+      Infrared(int=2);
+      void setup();
+      bool get();
+      void setPin(int);
 
-    protected:
     private:
+      int pin;
       int counter = 0;
 };
 

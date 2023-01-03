@@ -7,19 +7,19 @@ Register::Register(int Latch, int Data, int Clock):latchPin(Latch), dataPin(Data
 }
 
 void Register::setup(){
-    updateShiftRegister();
-    delay(200);
-    pinMode(latchPin, OUTPUT);
-    pinMode(dataPin, OUTPUT);
-    pinMode(clockPin, OUTPUT);
+  updateShiftRegister();
+  delay(200);
+  pinMode(latchPin, OUTPUT);
+  pinMode(dataPin, OUTPUT);
+  pinMode(clockPin, OUTPUT);
 }
 
 
 void Register::updateShiftRegister()
 {
-   digitalWrite(latchPin, LOW);
-   shiftOut(dataPin, clockPin, MSBFIRST, leds);
-   digitalWrite(latchPin, HIGH);
+  digitalWrite(latchPin, LOW);
+  shiftOut(dataPin, clockPin, MSBFIRST, leds);
+  digitalWrite(latchPin, HIGH);
 }
 
 void Register::light(int* a){
@@ -33,7 +33,7 @@ void Register::light(int* a){
 }
 
 void Register::off(){
-    leds = 0;
+  leds = 0;
 }
 
 void Register::set(int a, int b, int c){
