@@ -1,0 +1,142 @@
+// #include "Register.h"
+// #include"Junction.h"
+
+// unsigned long endTime, startTime; 
+// unsigned long timeBlock = 10000;
+// unsigned long TimeElapsed; 
+
+// int car_counter; 
+
+// int density[4] ={0,0,0,0};
+// int red[8] = {1,1,1,1,0,0,0,0};
+// int green[4] = {0,0,0,0};
+
+// int current; 
+// int previous = 0;
+// int junction_move; 
+// int prev_junc; 
+
+// Junction j1(7);
+// Junction j2(8);
+// Junction j3(9);
+// Junction j4(10);
+// Junction j[4] = {j1, j2, j3, j4};
+
+// bool has_run, most_dense =0, yellow=0;
+
+// Register r1(5, 4, 6); 
+// Register g1(3,11,2);
+
+// void setup() {
+//   r1.setup();
+//   g1.setup();
+//   j1.setup();
+//   j2.setup();
+//   j3.setup();
+//   j4.setup();
+
+//   Serial.begin(9600);
+//   r1.light(red);
+//   g1.light(green);
+// }
+
+// void startTimer(){
+//   startTime = millis();
+// }
+
+// unsigned long findTimeElapsed(){
+//     endTime = millis();
+//     TimeElapsed = endTime - startTime;
+//     return TimeElapsed; 
+// }
+
+// void green_todo(int junction_move){
+//   j[junction_move].reset_carNum();
+//   j[junction_move].set_waitingCounter(1);   
+
+//   for(int i=0; i<4; i++){
+//     red[i]=1;
+//     green[i] =0;
+//   }
+//   red[junction_move] = 0;
+//   green[junction_move] = 1;
+//   density[junction_move]= 0;
+
+//   for(int i=0; i<4; i++){
+//     if(i!=junction_move){
+//       if(j[i].get_carNum()!=0){
+//         j[i].increment_waitingCounter();
+//         Serial.print("\t");
+//         Serial.print(i);
+//         Serial.print(": ");
+//         Serial.print(j[i].get_carNum());
+//         }
+//       }
+//   }
+
+//   // delay(20000);
+// }
+
+// void yellow_todo(int junction_move){
+//   red[junction_move+4] = 1;
+//   r1.off();
+//   r1.light(red);
+//   delay(1000);
+//   red[junction_move+4] = 0;
+//   r1.off();
+//   r1.light(red);
+// }
+
+// void loop() {
+//   previous = 0;
+//   if(has_run){
+//     startTimer();
+//     has_run = 0;
+//   }
+ 
+//   TimeElapsed = findTimeElapsed();
+//   j[0].get_carNum();
+//   j[1].get_carNum();
+//   j[2].get_carNum();
+//   j[3].get_carNum();
+
+//   Serial.println(TimeElapsed);
+//   if(TimeElapsed>=timeBlock-3000){
+//     // yellow_todo(junction_move);
+//     for(int i=0; i<4; i++){
+//         density[i] = (j[i].get_carNum())*(j[i].get_waitingCounter()); //get density from each junction
+//         current = density[i]; // find largest junction with largest density
+//         if(current>previous){
+// 	        previous = current;
+//           junction_move = i;
+//        }
+      
+//     }
+//     if(prev_junc != junction_move){
+//       yellow_todo(prev_junc);
+//     }
+//     green_todo(junction_move);
+//     prev_junc = junction_move;
+//     TimeElapsed = 0;
+//     has_run = 1;
+//   }
+
+//   r1.off();
+//   r1.light(red);
+//   g1.light(green);
+// }
+
+#include "TrafficLight.h"
+
+TrafficLight t1(5,4,6,3,11,2,7,8,9,10,10000);
+
+void setup(){
+  t1.setup();
+}
+
+void loop(){
+  t1.run();
+}
+
+
+
