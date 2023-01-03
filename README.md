@@ -62,3 +62,9 @@ TrafficLight(int Latch1, int Data1, int Clock1, int Latch2, int Data2, int Clock
 |IR3|IR Sensor Pin at 3rd junction|
 |IR4|IR Sensor Pin at 4th junction|
 |TimeBlock|Time Block for each junction to move|
+
+## Credits
+--------------------------------------------
+IR Sensor - https://circuitdigest.com/microcontroller-projects/interfacing-ir-sensor-module-with-arduino
+
+Shift Register - https://lastminuteengineers.com/74hc595-shift-register-arduino-tutorial/
