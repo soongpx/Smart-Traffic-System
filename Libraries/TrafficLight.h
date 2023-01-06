@@ -12,8 +12,8 @@ class TrafficLight
       void run();
       void startTimer();
       unsigned long findTimeElapsed();
-      void green_todo(int);
-      void yellow_todo(int junction_move);
+      void green_todo(int junction_move);
+      void yellow_todo(int prev_junc);
 
     private:
       unsigned long endTime, startTime; 
