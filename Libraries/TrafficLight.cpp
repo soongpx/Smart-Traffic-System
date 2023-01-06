@@ -44,7 +44,7 @@ void TrafficLight::run(){
         density[i] = (jun[i].get_carNum())*(jun[i].get_waitingCounter()); //get density from each junction
         current = density[i]; // find largest junction with largest density
         if(current>previous){
-	        previous = current;
+	  previous = current;
           junction_move = i;
        }
       
@@ -88,10 +88,6 @@ void TrafficLight::green_todo(int junction_move){
     if(i!=junction_move){
       if(jun[i].get_carNum()!=0){
         jun[i].increment_waitingCounter();
-        // Serial.print("\t");
-        // Serial.print(i);
-        // Serial.print(": ");
-        // Serial.print(j[i].get_carNum());
         }
       }
   }
